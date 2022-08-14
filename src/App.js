@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CreateTodo from "./CreateTodo";
 import TodoList from "./TodoList";
+import DoneTodoList from "./DoneTodo";
 
 function App() {
 
@@ -12,18 +13,20 @@ function App() {
   });
 
   // 구조분해 할당을 통해 값 추출 
-  const { title, content } = inputs; 
+  const { title, content, isDone } = inputs; 
 
   const [ todos, setTodos ] = useState([
     {
       id: 1,
       title : "할 일1",
-      content: "content1"
+      content: "content1",
+      isDone: true
     },
     {
       id: 2,
       title : "할 일2",
-      content: "content2"
+      content: "content2",
+      isDone: false
     }
   ]); // 객체 배열 넣기 
 
@@ -41,7 +44,7 @@ function App() {
   }
 
   const onClickHandler = () => {
-    setTodos([...todos, {id: todos.length+1, title: title, content: content}])
+    setTodos([...todos, {id: todos.length+1, title: title, content: content, isDone: isDone}])
   }
 
   // todo 삭제
@@ -51,6 +54,16 @@ function App() {
     setTodos(todos.filter(todo => todo.id !== id))
   }
 
+  // 완료하기 버튼
+  // 완료하기 버튼을 누르면 isDone이 true로 바껴야 함
+  const completeTodo = (id) => {
+    console.log(id)
+    setTodos(todos => todos.map(todo =>
+        (todo.id === id? {...todo, isDone: !todo.isDone} : todo)
+      )
+    )
+  };
+
   return (
     <div>
       <CreateTodo 
@@ -59,8 +72,10 @@ function App() {
         onChange={onChangeHandler}
         onCreate={onClickHandler}
         />
-        <h3>Todo List</h3>
-        <TodoList todos={todos} onRemoveTodo={onRemoveTodo}/>
+        <h3>Working.. 🔥</h3>
+        <TodoList todos={todos} onRemoveTodo={onRemoveTodo} completeTodo={completeTodo}/>
+        <h3>Done..! 🎉</h3>
+        <DoneTodoList todos={todos} onRemoveTodo={onRemoveTodo} completeTodo={completeTodo}/> 
     </div>
   );
 }
