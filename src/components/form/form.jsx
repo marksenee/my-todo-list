@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css'
 
-function CreateTodo({ title, content, onChange, onCreate }) {
+function Form({ title, content, onChange, onCreate }) {
   return (
     <div className='create'>
       <h3 className='h3'>투두리스트</h3>
@@ -28,4 +28,4 @@ function CreateTodo({ title, content, onChange, onCreate }) {
   );
 }
 
-export default CreateTodo;
+export default Form;

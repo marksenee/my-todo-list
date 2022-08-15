@@ -6,3 +6,14 @@ body {
     align-items: center;
     margin: 0 auto;
 }
+
+.form {
+    background-color: antiquewhite;
+    width: 700px;
+    height: 600px;
+    border-radius: 20px;
+}
+
+.title-state {
+    padding: 15px 0px 0px 10px;
+}

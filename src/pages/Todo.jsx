@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-import './components/layout/style.css'
-import './components/form/style.css'
+import '../components/layout/style.css'
 
-import CreateTodo from "./components/todo/CreateTodo";
-import TodoList from "./pages/TodoList";
-import DoneTodoList from "./pages/DoneTodo";
+import Form from "../components/form/form";
+import TodoList from "../components/list/list";
+// import TodoList from "./TodoList";
+// import DoneTodoList from "./DoneTodo";
 
-function App() {
+function Todo() {
 
   // 객체 형태로 두 input 태그의 name 속성값을 초기화 
   const [ inputs, setInputs ] = useState({
@@ -68,8 +68,7 @@ function App() {
 
   // 완료하기 버튼
   // 완료하기 버튼을 누르면 isDone이 true로 바껴야 함
-  const completeTodo = (id) => {
-    console.log(id)
+  const checkTodo = (id) => {
     setTodos(todos => todos.map(todo =>
         (todo.id === id? {...todo, isDone: !todo.isDone} : todo)
       )
@@ -77,21 +76,23 @@ function App() {
   };
 
   return (
-    <div className="">
-      <CreateTodo 
+    <div>
+      <Form 
         title={title}
         content={content}
         onChange={onChangeHandler}
         onCreate={onClickHandler}
         />
-        <div className="form"> 
+        <TodoList todos={todos} onRemoveTodo={onRemoveTodo} checkTodo={checkTodo} />
+
+        {/* <div className="form"> 
           <h3 className="title-state">해야할 일 🔥</h3>
           <TodoList todos={todos} onRemoveTodo={onRemoveTodo} completeTodo={completeTodo}/>
           <h3 className="title-state">완료한 일 🎉</h3>
           <DoneTodoList todos={todos} onRemoveTodo={onRemoveTodo} completeTodo={completeTodo}/> 
-        </div>
+        </div> */}
     </div>
   );
 }
 
-export default App;
+export default Todo;
