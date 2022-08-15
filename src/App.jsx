@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 import './components/layout/style.css'
 import './components/form/style.css'
 
-import Todo from "./pages/Todo";
+import Todo from "./pages/TodoList";
 
 function App() {
   return (
