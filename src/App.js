@@ -36,6 +36,8 @@ function App() {
 
   const onChangeHandler = (event) => {
     const { name, value } = event.target; //event.target에서 name과 value 추출 
+    console.log("name:" , name , " [name]:" , [name], " value:", value); //name: title  [name]: ['title']  value: "내가 입력하고 있는 값"
+    
     setInputs({
       ...inputs, // 기존 inputs 객체 복사 
       [name]: value // name 키를 가진 값을 value로 변경 
@@ -43,13 +45,18 @@ function App() {
   };
 
   const onClickHandler = () => {
-    // todo 새로운 값 등록 
-    setTodos([...todos, {id: todos.length+1, title: title, content: content, isDone: isDone}])
-    // input 초기화
-    setInputs({
-      title: '',
-      content: '',
-    })
+    // 제목과 내용을 입력하지 않을 경우 등록이 안되도록 제어
+    if ( (title === '') || (content === '')) {
+      return alert("제목과 내용을 입력하세요");
+    } else {
+        // todo 새로운 값 등록 
+        setTodos([...todos, {id: todos.length+1, title: title, content: content, isDone: isDone}])
+        // input 초기화
+        setInputs({
+          title: '',
+          content: '',
+        })
+    }
   }
 
   // todo 삭제
