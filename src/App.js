@@ -46,7 +46,7 @@ function App() {
 
   const onClickHandler = () => {
     // 제목과 내용을 입력하지 않을 경우 등록이 안되도록 제어
-    if ( (title === '') || (content === '')) {
+    if ( title === '' || content === '') {
       return alert("제목과 내용을 입력하세요");
     } else {
         // todo 새로운 값 등록 
