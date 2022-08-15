@@ -42,13 +42,14 @@ function App() {
     });
   };
 
-  //input 초기화
-  const onResetInput = () => {
-    setInputs('');
-  }
-
   const onClickHandler = () => {
+    // todo 새로운 값 등록 
     setTodos([...todos, {id: todos.length+1, title: title, content: content, isDone: isDone}])
+    // input 초기화
+    setInputs({
+      title: '',
+      content: '',
+    })
   }
 
   // todo 삭제
