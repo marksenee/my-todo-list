@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import CreateTodo from "./CreateTodo";
-import TodoList from "./TodoList";
-import DoneTodoList from "./DoneTodo";
+
+import './components/layout/style.css'
+import './components/form/style.css'
+
+import CreateTodo from "./components/todo/CreateTodo";
+import TodoList from "./pages/TodoList";
+import DoneTodoList from "./pages/DoneTodo";
 
 function App() {
 
@@ -65,17 +69,19 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="">
       <CreateTodo 
         title={title}
         content={content}
         onChange={onChangeHandler}
         onCreate={onClickHandler}
         />
-        <h3>Working.. 🔥</h3>
-        <TodoList todos={todos} onRemoveTodo={onRemoveTodo} completeTodo={completeTodo}/>
-        <h3>Done..! 🎉</h3>
-        <DoneTodoList todos={todos} onRemoveTodo={onRemoveTodo} completeTodo={completeTodo}/> 
+        <div className="form"> 
+          <h3 className="title-state">해야할 일 🔥</h3>
+          <TodoList todos={todos} onRemoveTodo={onRemoveTodo} completeTodo={completeTodo}/>
+          <h3 className="title-state">완료한 일 🎉</h3>
+          <DoneTodoList todos={todos} onRemoveTodo={onRemoveTodo} completeTodo={completeTodo}/> 
+        </div>
     </div>
   );
 }

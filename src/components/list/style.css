@@ -1,0 +1,33 @@
+.index {
+    background-color: antiquewhite;
+    width: 700px;
+    height: 40px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-list {
+    margin: 15px;
+    font-weight: 500;
+}
+
+.delete-btn {
+    width: 40px;
+    height: 30px;
+    background-color: red;
+    border-radius: 5px;
+    border-color: transparent;
+    color: white;
+    margin: 5px;
+}
+
+.complete-btn {
+    width: 40px;
+    height: 30px;
+    background-color: black;
+    border-radius: 5px;
+    border-color: transparent;
+    color: white;
+    margin: 5px;
+}
