@@ -6,7 +6,7 @@ import Todo from '../todo/Todo';
 
 function List({ todos, onRemoveTodo, checkTodo }) {
   return (
-    <div>
+    <>
       <div className="form"> 
         <h3 className="title-state">해야할 일 🔥</h3>
         <div>
@@ -35,7 +35,7 @@ function List({ todos, onRemoveTodo, checkTodo }) {
             }
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

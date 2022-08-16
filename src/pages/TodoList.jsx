@@ -75,15 +75,17 @@ function TodoList() {
   };
 
   return (
-    <div>
+    <>
       <Form 
         title={title}
         content={content}
         onChange={onChangeHandler}
         onCreate={onClickHandler}
         />
-        <List todos={todos} onRemoveTodo={onRemoveTodo} checkTodo={checkTodo} />
-    </div>
+        <List todos={todos} 
+          onRemoveTodo={onRemoveTodo} 
+          checkTodo={checkTodo} />
+    </>
   );
 }
 
