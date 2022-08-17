@@ -5,7 +5,9 @@ function Todo({ todo, onRemoveTodo, checkTodo }) {
     const { id, title, content, isDone } = todo;
     return (
         <div className='index'>
-            <span className='item-list'>{title}-{content}</span>
+            <div className='item-list'> 
+              <span className='title'>☑ {title} : {content}</span>
+            </div>
             <div>
               <button className='delete-btn' onClick={() => onRemoveTodo(id)}>삭제</button>
               {isDone ?

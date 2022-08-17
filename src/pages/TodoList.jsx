@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import '../components/layout/style.css'
 
-import Header from "../components/header/header";
+import Header from "../components/header/Header";
 import List from "../components/list/List";
 
 function TodoList() {
@@ -20,14 +20,26 @@ function TodoList() {
   const [ todos, setTodos ] = useState([
     {
       id: 1,
-      title : "할 일1",
-      content: "content1",
-      isDone: true
+      title : "리액트",
+      content: "리액트 hooks 공부하기",
+      isDone: false
     },
     {
       id: 2,
-      title : "할 일2",
-      content: "content2",
+      title : "TIL",
+      content: "매일 TIL 작성하기",
+      isDone: true
+    },
+    {
+      id: 3,
+      title : "WIL",
+      content: "일요일 WIL 제출하기",
+      isDone: false
+    },
+    {
+      id: 4,
+      title : "JavaScript",
+      content: "JavaScript 공부하기",
       isDone: false
     }
   ]); // 객체 배열 넣기 

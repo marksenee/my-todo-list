@@ -24,7 +24,7 @@ function List({ todos, onRemoveTodo, checkTodo }) {
           </div>
         </div>
         <div className='check-isDone'>
-          <h3 className="title-state">완료한 일 🔥</h3>
+          <h3 className="title-state">완료한 일 👍🏻</h3>
           <div>
               {todos.filter((todo) => todo.isDone)
                   .map((doneTodo) => (

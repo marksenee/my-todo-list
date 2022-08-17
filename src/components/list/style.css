@@ -1,14 +1,15 @@
 .form {
-    background-color: antiquewhite;
+    background-color: #ffe268;
     width: 700px;
-    height: 600px;
+    height: 1200px;
     border-radius: 20px;
 }
 
 .title-state {
-    padding: 15px 0px 0px 10px;
+    padding: 20px 0px 0px 10px;
+    margin: 15px 0px 0px 20px;
 }
 
 .check-isDone {
-    height: 250px;
+    height: auto;
 }
