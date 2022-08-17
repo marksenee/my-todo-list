@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import '../components/layout/style.css'
 
-import Form from "../components/form/Form";
+import Header from "../components/header/header";
 import List from "../components/list/List";
 
 function TodoList() {
@@ -76,7 +76,7 @@ function TodoList() {
 
   return (
     <>
-      <Form 
+      <Header 
         title={title}
         content={content}
         onChange={onChangeHandler}
