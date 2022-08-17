@@ -1,10 +1,9 @@
 import React from 'react';
+
 import './style.css'
 
 function Form({ title, content, onChange, onCreate }) {
   return (
-    <div className='create'>
-      <h3 className='h3'>투두리스트</h3>
       <div className='container'>
         <span className='span'>제목</span>
         <input
@@ -24,7 +23,6 @@ function Form({ title, content, onChange, onCreate }) {
         />
         <button className='btn' onClick={onCreate}>등록</button>
       </div>
-    </div>
   );
 }
 
