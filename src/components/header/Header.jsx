@@ -2,19 +2,20 @@ import React from 'react';
 
 import Form from '../form/Form';
 
-import './style.css'
+import HeaderStyle from './css/HeaderStyle';
+import MainTitleStyle from './css/MainTitleStyle';
 
 function Header({ title, content, onChange, onCreate }) {
   return (
-    <div className='create'>
-      <h3 className='h3'>투두리스트</h3>
+    <HeaderStyle>
+      <MainTitleStyle>투두리스트</MainTitleStyle>
       <Form 
         title={title}
         content={content}
         onChange={onChange}
         onCreate={onCreate}
         />
-    </div>
+    </HeaderStyle>
   );
 }
 
