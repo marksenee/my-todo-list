@@ -1,28 +1,29 @@
 import React from 'react';
 
-import './style.css'
+import ContainerStyle from './css/ContainerStyle';
+import SpanStyle from './css/SpanStyle';
+import InputStyle from './css/InputStyle';
+import CreateBtnStyle from './css/CreateBtnStyle';
 
 function Form({ title, content, onChange, onCreate }) {
   return (
-      <div className='container'>
-        <span className='span'>제목</span>
-        <input
-          className='input'
+      <ContainerStyle>
+        <SpanStyle>제목</SpanStyle>
+        <InputStyle 
           name="title"
           placeholder="제목"
           onChange={onChange}
-          value={title}
-        />
-        <span className='span'>내용</span>
-        <input
-          className='input'
+          value={title}>
+        </InputStyle>
+        <SpanStyle>내용</SpanStyle>
+        <InputStyle 
           name="content"
           placeholder="내용"
           onChange={onChange}
-          value={content}
-        />
-        <button className='btn' onClick={onCreate}>등록</button>
-      </div>
+          value={content}>
+        </InputStyle>
+        <CreateBtnStyle onClick={onCreate}>등록</CreateBtnStyle>
+      </ContainerStyle>
   );
 }
 
