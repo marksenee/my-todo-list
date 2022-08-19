@@ -5,7 +5,7 @@ import ItemListStyle from './css/ItemListStyle';
 import ItemStyle from './css/ItemStyle';
 import CheckBtnStyle from './css/CheckBtnStyle';
 
-function Todo({ todo, onRemoveTodo, checkTodo }) {
+function Todo({ todo, onRemoveTodo, onClickCheck }) {
     const { id, title, content, isDone } = todo;
     return (
         <IndexStyle>
@@ -15,8 +15,8 @@ function Todo({ todo, onRemoveTodo, checkTodo }) {
             <div>
               <CheckBtnStyle color="#ff80ab" onClick={() => onRemoveTodo(id)}>삭제</CheckBtnStyle>
               {isDone ?
-                <CheckBtnStyle color="#8c9eff" onClick={() => checkTodo(id)}>취소</CheckBtnStyle>
-                 :  <CheckBtnStyle  color="#b388ff" onClick={() => checkTodo(id)}>완료</CheckBtnStyle>
+                <CheckBtnStyle color="#8c9eff" onClick={() => onClickCheck(id)}>취소</CheckBtnStyle>
+                 :  <CheckBtnStyle  color="#b388ff" onClick={() => onClickCheck(id)}>완료</CheckBtnStyle>
               }
             </div>
         </IndexStyle>

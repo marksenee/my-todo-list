@@ -74,7 +74,6 @@ const todos = (state = initialState, action) => {
             return {
                 ...state,
                 todos: state.todos.concat(action.todo)
-                // state.concat(action.todo)
             }
         case DELETE_TODO:
             return {
@@ -82,7 +81,12 @@ const todos = (state = initialState, action) => {
                 todos: state.todos.filter(todo => todo.id !== action.id)
             };
         case CHECK_TODO:
-            return state.map(todo => todo.id === state.id ? {...todo, isDone: !todo.done} : todo);
+            return {
+                ...state,
+                todos: state.todos.map(todo => 
+                    todo.id === action.id ? {...todo, isDone: !todo.isDone } : todo    
+                )
+            }
         default: 
             return state;
     }

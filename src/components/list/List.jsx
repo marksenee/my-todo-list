@@ -6,7 +6,7 @@ import FormStyle from './css/FormStyle.jsx';
 import CheckStyle from './css/CheckStyle.jsx';
 import TitleStyle from './css/TitleStyle.jsx';
 
-function List({ todos, onRemoveTodo, checkTodo }) {
+function List({ todos, onRemoveTodo, onClickCheck }) {
   return (
     <>
       <FormStyle> 
@@ -19,7 +19,7 @@ function List({ todos, onRemoveTodo, checkTodo }) {
                       todo={progressTodo} 
                       key={progressTodo.id} 
                       onRemoveTodo={onRemoveTodo} 
-                      checkTodo={checkTodo}
+                      onClickCheck={onClickCheck}
                   />
                   ))
               }
@@ -34,7 +34,7 @@ function List({ todos, onRemoveTodo, checkTodo }) {
                         todo={doneTodo} 
                         key={doneTodo.id} 
                         onRemoveTodo={onRemoveTodo} 
-                        checkTodo={checkTodo}
+                        onClickCheck={onClickCheck}
                   />
                 ))
               }

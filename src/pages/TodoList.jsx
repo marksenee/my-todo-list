@@ -10,10 +10,7 @@ import { addTodo, deleteTodo, checkTodo } from '../redux/modules/todos'
 function TodoList() {
 
   const dispatch = useDispatch();
-  // const todo_data = useSelector(state => state.todos);
   const { todos } = useSelector((state) => state.todos); // initialstate 안에 있는 todos를 가져온 것 
-
-
 
   const data = useSelector((state) => {
     console.log(state);
@@ -31,33 +28,6 @@ function TodoList() {
 
   // 구조분해 할당을 통해 값 추출 
   const { id, title, content, isDone } = inputs; 
-
-  // const [ todos, setTodos ] = useState([
-  //   {
-  //     id: 1,
-  //     title : "리액트",
-  //     content: "리액트 hooks 공부하기",
-  //     isDone: false
-  //   },
-  //   {
-  //     id: 2,
-  //     title : "TIL",
-  //     content: "매일 TIL 작성하기",
-  //     isDone: true
-  //   },
-  //   {
-  //     id: 3,
-  //     title : "WIL",
-  //     content: "일요일 WIL 제출하기",
-  //     isDone: false
-  //   },
-  //   {
-  //     id: 4,
-  //     title : "JavaScript",
-  //     content: "JavaScript 공부하기",
-  //     isDone: false
-  //   }
-  // ]); // 객체 배열 넣기 
 
   const onChangeHandler = (event) => {
     console.log(event.target.value)
@@ -94,11 +64,8 @@ function TodoList() {
 
   // 완료하기 버튼
   // 완료하기 버튼을 누르면 isDone이 true로 바껴야 함
-  const checkTodo = (id) => {
-    // setTodos(todos => todos.map(todo =>
-    //     (todo.id === id? {...todo, isDone: !todo.isDone} : todo)
-    //   )
-    // )
+  const onClickCheck = (id) => {
+    dispatch(checkTodo(id))
   };
 
   return (
@@ -111,7 +78,7 @@ function TodoList() {
         />
         <List todos={todos} 
           onRemoveTodo={onRemoveTodo} 
-          checkTodo={checkTodo} />
+          onClickCheck={onClickCheck} />
     </LayoutStyle>
   );
 }
